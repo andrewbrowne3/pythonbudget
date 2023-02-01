@@ -1,6 +1,14 @@
+
 import matplotlib.pyplot as plt
+import sqlite3
+
+conn = sqlite3.connect('budget')
+c = conn.cursor()
+
 
 def budget():
+  
+
     c.execute('''CREATE TABLE IF NOT EXISTS budget (category text, amount real, date text)''')
     insert_statement = "INSERT INTO budget VALUES (?,?,?)"
     values = (str(input('insert expense')),input('insert amount in USD'),str(input('insert date')))
